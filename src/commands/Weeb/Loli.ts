@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
         const loli = new Loli()
-        const i = await loli.getSFWLoli()
+        const i = await loli.getNSFWLoli()
         const buffer = await request.buffer(i.url).catch((e) => {
             return void M.reply(e.message)
         })
